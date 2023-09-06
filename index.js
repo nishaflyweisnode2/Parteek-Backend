@@ -21,7 +21,13 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 
+
 const routes = require('./routes/userRoute');
+const companyCategory = require('./routes/companyCategoryRoutes');
+const locationRoutes = require('./routes/locationRoutes');
+
+
+
 
 
 mongoose.Promise = global.Promise;
@@ -39,6 +45,8 @@ mongoose.connect(DB_URI, {
 
 
 app.use('/user', routes);
+app.use('/company', companyCategory);
+app.use('/location', locationRoutes);
 
 
 

@@ -20,7 +20,8 @@ const userSchema = new mongoose.Schema({
     image: String,
     address1: String,
     address2: String
-});
+
+}, { timestamps: true });
 
 const User = mongoose.model('User', userSchema);
 
